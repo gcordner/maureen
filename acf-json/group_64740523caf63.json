@@ -5,10 +5,10 @@
         {
             "key": "field_64740523a7794",
             "label": "Date",
-            "name": "date",
+            "name": "event_date",
             "aria-label": "",
-            "type": "date_picker",
-            "instructions": "Choose the date the event started",
+            "type": "text",
+            "instructions": "Enter date in this format: YYYY-MM-DD",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,9 +16,11 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "F, Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_647405dea7796",
@@ -76,5 +78,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685328960
+    "modified": 1686850624
 }
