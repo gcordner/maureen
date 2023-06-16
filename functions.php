@@ -94,20 +94,33 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 /**
- * Sort events by event date on archive page
+ * Sort events by event date on archive page.
+ *
+ * @param WP_Query $query The WordPress query object.
  */
 function mau_sort_events_by_event_date( $query ) {
-    if ( is_admin() || ! $query->is_main_query() ) {
-        return;
-    }
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
 
-    if ( is_post_type_archive() ) {
-        $query->set( 'meta_key', 'event_date' );
-        $query->set( 'orderby', 'meta_value' );
-        $query->set( 'order', 'ASC' );
-    }
+	if ( is_post_type_archive() || is_front_page() ) {
+		$query->set( 'meta_key', 'event_date' );
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'order', 'ASC' );
+	}
 }
 add_action( 'pre_get_posts', 'mau_sort_events_by_event_date', 99 );
 
-
+/**
+ * Make events archive front page.
+ *
+ * @param WP_Query $query The WordPress query object.
+ */
+function custom_front_page( $query ) {
+	if ( $query->is_main_query() && is_front_page() ) {
+		$query->set( 'post_type', 'event' );
+		$query->set( 'posts_per_page', -1 ); // remove this line if you want to use default posts per page.
+	}
+}
+add_action( 'pre_get_posts', 'custom_front_page' );
 
