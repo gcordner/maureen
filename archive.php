@@ -10,8 +10,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
-
 get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
@@ -52,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						get_template_part( 'loop-templates/content-single', get_post_format() );
 					}
 				} else {
-					get_template_part( 'loop-templates/content-single', 'none' );
+					get_template_part( 'loop-templates/content', 'none' );
 				}
 				?>
 

@@ -103,7 +103,7 @@ function mau_sort_events_by_event_date( $query ) {
 		return;
 	}
 
-	if ( is_post_type_archive() || is_front_page() ) {
+	if ( is_front_page() || is_archive() ) {
 		$query->set( 'meta_key', 'event_date' );
 		$query->set( 'orderby', 'meta_value' );
 		$query->set( 'order', 'ASC' );
