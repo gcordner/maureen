@@ -1,0 +1,19 @@
+.archive__family {
+    border: 1px solid #cccccc;
+}
+
+
+#archive-wrapper {
+    .entry-footer {
+        display: none;
+    }
+
+    .entry-header {
+        margin-top: map-get($spacers, 4);
+    }
+
+    article {
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: map-get($spacers, 4);
+    }
+}

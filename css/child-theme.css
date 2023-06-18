@@ -14964,6 +14964,21 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+.archive__family {
+  border: 1px solid #cccccc;
+}
+
+#archive-wrapper .entry-footer {
+  display: none;
+}
+#archive-wrapper .entry-header {
+  margin-top: 1.5rem;
+}
+#archive-wrapper article {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 1.5rem;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

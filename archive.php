@@ -33,7 +33,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 					?>
 					<header class="page-header">
 						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						if ( 'event' === get_post_type() ) {
+							echo '<h1 class="page-title">Family Story</h1>';
+						} else {
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+
+						}
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
